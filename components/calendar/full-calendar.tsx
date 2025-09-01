@@ -207,48 +207,49 @@ export function Calendar({
 
   return (
     <div className="h-full w-full">
-      <FullCalendar
-        ref={calendarRef}
-        plugins={[
-          dayGridPlugin,
-          timeGridPlugin,
-          interactionPlugin,
-          listPlugin,
-          multiMonthPlugin,
-        ]}
-        headerToolbar={{
-          left: "prev,next today",
-          center: "title",
-          right:
-            "multiMonthYear,dayGridMonth,timeGridWeek,timeGridDay,listWeek",
-        }}
-        initialView={getInitialView()}
-        editable
-        selectable
-        selectMirror
-        dayMaxEvents
-        weekends
-        events={calendarEvents}
-        select={handleDateSelect}
-        eventClick={handleEventClick}
-        eventDrop={handleEventDrop}
-        eventResize={handleEventResize}
-        height="auto"
-        nowIndicator
-        slotMinTime="06:00:00"
-        slotMaxTime="22:00:00"
-        allDaySlot
-        dragScroll
-        eventResizableFromStart
-        eventDurationEditable
-        snapDuration="00:15:00"
-        businessHours={{
-          daysOfWeek: [1, 2, 3, 4, 5],
-          startTime: "09:00",
-          endTime: "17:00",
-        }}
-        className="p-2 sm:p-4 text-xs sm:text-sm md:text-base dark:bg-gray-900 dark:text-gray-100 rounded-lg shadow-md"
-      />
+      <div className="p-2 sm:p-4 text-xs sm:text-sm md:text-base dark:bg-gray-900 dark:text-gray-100 rounded-lg shadow-md">
+        <FullCalendar
+          ref={calendarRef}
+          plugins={[
+            dayGridPlugin,
+            timeGridPlugin,
+            interactionPlugin,
+            listPlugin,
+            multiMonthPlugin,
+          ]}
+          headerToolbar={{
+            left: "prev,next today",
+            center: "title",
+            right:
+              "multiMonthYear,dayGridMonth,timeGridWeek,timeGridDay,listWeek",
+          }}
+          initialView={getInitialView()}
+          editable
+          selectable
+          selectMirror
+          dayMaxEvents
+          weekends
+          events={calendarEvents}
+          select={handleDateSelect}
+          eventClick={handleEventClick}
+          eventDrop={handleEventDrop}
+          eventResize={handleEventResize}
+          height="auto"
+          nowIndicator
+          slotMinTime="06:00:00"
+          slotMaxTime="22:00:00"
+          allDaySlot
+          dragScroll
+          eventResizableFromStart
+          eventDurationEditable
+          snapDuration="00:15:00"
+          businessHours={{
+            daysOfWeek: [1, 2, 3, 4, 5],
+            startTime: "09:00",
+            endTime: "17:00",
+          }}
+        />
+      </div>
 
       {isModalOpen && (
         <EventModal

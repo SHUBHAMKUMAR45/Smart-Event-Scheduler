@@ -111,4 +111,3 @@ export interface AISchedulingSuggestion {
   alternatives: Date[];
   conflicts: Event[];
 }
-</types>

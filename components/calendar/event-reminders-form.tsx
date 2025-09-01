@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Badge } from '@/components/ui/badge';
 import { Bell, Plus, X, Mail, Smartphone, Monitor } from 'lucide-react';
 import { Reminder } from '@/types';
+import { Label } from '@radix-ui/react-label';
 
 interface EventRemindersFormProps {
   reminders: Reminder[];
@@ -80,7 +81,7 @@ export function EventRemindersForm({ reminders, onChange }: EventRemindersFormPr
       <CardContent className="space-y-4">
         {/* Add New Reminder */}
         <div className="flex gap-2">
-          <Select value={newReminderType} onValueChange={setNewReminderType}>
+          <Select value={newReminderType} onValueChange={(value) => setNewReminderType(value as 'email' | 'push' | 'popup')}>
             <SelectTrigger className="w-40">
               <SelectValue />
             </SelectTrigger>

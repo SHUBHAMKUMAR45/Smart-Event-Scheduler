@@ -129,7 +129,7 @@ export class DateHelpers {
   static findAvailableSlots(
     date: Date,
     duration: number,
-    existingEvents: Event[],
+    existingEvents: { start: Date | string; end: Date | string }[],
     workingHours: { start: string; end: string; days: number[] }
   ): Date[] {
     const slots: Date[] = [];
