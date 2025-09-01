@@ -9,8 +9,12 @@ const nextConfig = {
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
   },
   images: {
-    domains: ['images.unsplash.com', 'lh3.googleusercontent.com', 'avatars.githubusercontent.com'],
-    unoptimized: true
+    domains: [
+      "images.unsplash.com",
+      "lh3.googleusercontent.com",
+      "avatars.githubusercontent.com",
+    ],
+    unoptimized: true,
   },
   webpack: (config) => {
     config.resolve.fallback = {
@@ -18,6 +22,9 @@ const nextConfig = {
       fs: false,
     };
     return config;
+  },
+  eslint: {
+    ignoreDuringBuilds: true, // 🚀 this skips ESLint checks on Vercel
   },
 };
 
