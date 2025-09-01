@@ -195,7 +195,9 @@ export default function TeamPage() {
             />
             <Select
               value={invitePermission}
-              onValueChange={setInvitePermission}
+              onValueChange={(val) =>
+                setInvitePermission(val as "read" | "write" | "admin")
+              }
             >
               <SelectTrigger className="w-full sm:w-32">
                 <SelectValue placeholder="Permission" />
