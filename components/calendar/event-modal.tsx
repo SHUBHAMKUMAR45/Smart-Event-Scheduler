@@ -287,7 +287,10 @@ export function EventModal({
 
           {activeTab === "attendees" && (
             <EventInvitationForm
-              attendees={watchAttendees}
+              attendees={watchAttendees.map((a) => ({
+                ...a,
+                status: (a as any).status ?? "pending",
+              }))}
               onChange={(attendees) => setValue("attendees", attendees)}
               eventTitle={watch("title")}
             />
